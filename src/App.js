@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Component } from "react";
+import Question from "./components/Question";
+import Category from "./components/Category";
+import Points from "./components/Points";
+import Answer from "./components/Answer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    question: null,
+    answer: "",
+  };
+
+  getInfo = async () => {
+    try {
+      const response = await fetch("http://jservice.io/api/random");
+      const data = await response.json();
+      console.log(data);
+      this.setState({
+        question: data[0],
+        // answer: data[]
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  render() {
+    return (
+      <div className="container">
+        <header>
+          <h1>Welcome To Fake Jeopardy</h1>
+          <Points />
+        </header>
+        <Category />
+        {this.state.question && <Question question={this.state.question} />}
+
+        <button onClick={this.getInfo}>Get Question</button>
+
+        <Answer />
+      </div>
+    );
+  }
 }
 
 export default App;
