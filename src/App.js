@@ -48,14 +48,13 @@ class App extends Component {
         <div>
           {this.state.question && <Score question={this.state.question} />}
 
-          {this.state.question && <Points question={this.state.question} />}
-
           <h1>Let's Play</h1>
 
           <button className="get-question" onClick={this.getInfo}>
             Get Question
           </button>
           {this.state.question && <Category question={this.state.question} />}
+          {this.state.question && <Points question={this.state.question} />}
           {this.state.question && <Question question={this.state.question} />}
           {this.state.question && <Answer question={this.state.question} />}
         </div>

@@ -23,3 +23,7 @@ header {
   width: 300px;
   height: 50px;
 }
+
+.score {
+  color: yellow;
+}
