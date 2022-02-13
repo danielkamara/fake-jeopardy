@@ -1,8 +1,8 @@
 const Category = (props) => {
-  const { category } = props;
+  const { question } = props;
   return (
-    <div className="category" key={category}>
-      <h2>Category :{category}</h2>
+    <div className="category" key={question.id}>
+      <h2>Category: {question.category.title}</h2>
     </div>
   );
 };

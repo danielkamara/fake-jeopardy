@@ -8,7 +8,6 @@ import Answer from "./components/Answer";
 class App extends Component {
   state = {
     question: null,
-    answer: "",
   };
 
   getInfo = async () => {
@@ -16,9 +15,9 @@ class App extends Component {
       const response = await fetch("http://jservice.io/api/random");
       const data = await response.json();
       console.log(data);
+
       this.setState({
         question: data[0],
-        // answer: data[]
       });
     } catch (err) {
       console.log(err);
@@ -30,14 +29,17 @@ class App extends Component {
       <div className="container">
         <header>
           <h1>Welcome To Fake Jeopardy</h1>
-          <Points />
         </header>
-        <Category />
-        {this.state.question && <Question question={this.state.question} />}
+
+        <div>
+          {this.state.question && <Question question={this.state.question} />}
+          {this.state.question && <Category question={this.state.question} />}
+          {this.state.question && <Points question={this.state.question} />}
+          {this.state.question && <Answer question={this.state.question} />}
+        </div>
 
         <button onClick={this.getInfo}>Get Question</button>
-
-        <Answer />
+        <button onClick={this.getInfo}>Get Question</button>
       </div>
     );
   }

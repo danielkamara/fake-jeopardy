@@ -1,8 +1,8 @@
 const Answer = (props) => {
-  const { answer } = props;
+  const { question } = props;
   return (
-    <div className="answer" key={answer}>
-      <h2>Answer{answer}</h2>
+    <div className="answer" key={question.id}>
+      <h2>Answer: {question.answer}</h2>
     </div>
   );
 };

@@ -1,8 +1,8 @@
 const Points = (props) => {
-  const { points } = props;
+  const { question } = props;
   return (
-    <div className="points" key={points}>
-      <h2>Score:{points}</h2>
+    <div className="points" key={question.id}>
+      <h2>Score: {question.value}</h2>
     </div>
   );
 };
