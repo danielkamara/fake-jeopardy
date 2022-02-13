@@ -1,10 +1,10 @@
-const Answer = (props) => {
+const Score = (props) => {
   const { question } = props;
   return (
     <div className="answer" key={question.id}>
-      <h2>Question: {question.answer}</h2>
+      <h2>Score: {question.value}</h2>
     </div>
   );
 };
 
-export default Answer;
+export default Score;

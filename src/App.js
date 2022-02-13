@@ -4,10 +4,24 @@ import Question from "./components/Question";
 import Category from "./components/Category";
 import Points from "./components/Points";
 import Answer from "./components/Answer";
+import Score from "./components/Score";
 
 class App extends Component {
   state = {
     question: null,
+    isActive: false,
+  };
+
+  handleShow = () => {
+    this.setState({
+      isActive: true,
+    });
+  };
+
+  handleHide = () => {
+    this.setState({
+      isActive: false,
+    });
   };
 
   getInfo = async () => {
@@ -28,18 +42,33 @@ class App extends Component {
     return (
       <div className="container">
         <header>
-          <h1>Welcome To Fake Jeopardy</h1>
+          <h1>Welcome To Jeopardy</h1>
         </header>
 
         <div>
-          {this.state.question && <Question question={this.state.question} />}
-          {this.state.question && <Category question={this.state.question} />}
+          {this.state.question && <Score question={this.state.question} />}
+
           {this.state.question && <Points question={this.state.question} />}
+
+          <h1>Let's Play</h1>
+
+          <button className="get-question" onClick={this.getInfo}>
+            Get Question
+          </button>
+          {this.state.question && <Category question={this.state.question} />}
+          {this.state.question && <Question question={this.state.question} />}
           {this.state.question && <Answer question={this.state.question} />}
         </div>
 
-        <button onClick={this.getInfo}>Get Question</button>
-        <button onClick={this.getInfo}>Get Question</button>
+        <div>
+          {this.state.isActive ? <h1>Hello React</h1> : null}
+          <button className="reveal" onClick={this.handleShow}>
+            Click to Reveal Question
+          </button>
+          <button className="hide" onClick={this.handleHide}>
+            Click To Hide Question
+          </button>
+        </div>
       </div>
     );
   }

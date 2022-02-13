@@ -1,1 +1,25 @@
+body {
+  background-color: rgb(18, 121, 121);
+  text-align: center;
+}
 
+header {
+  color: white;
+}
+
+.get-question {
+  background-color: rgb(222, 222, 116);
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.reveal {
+  width: 300px;
+  height: 50px;
+}
+
+.hide {
+  width: 300px;
+  height: 50px;
+}
