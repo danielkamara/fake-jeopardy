@@ -5,6 +5,7 @@ import Category from "./components/Category";
 import Points from "./components/Points";
 import Answer from "./components/Answer";
 import Score from "./components/Score";
+import Button from "./components/Button";
 
 class App extends Component {
   state = {
@@ -48,7 +49,8 @@ class App extends Component {
         <div>
           {this.state.question && <Score question={this.state.question} />}
 
-          <h1>Let's Play</h1>
+          <Button />
+          <h1 style={{ color: "yellow" }}>Let's Play!</h1>
 
           <button className="get-question" onClick={this.getInfo}>
             Get Question
