@@ -2,7 +2,7 @@ const Question = (props) => {
   const { question } = props;
   return (
     <div className="question" key={question.id}>
-      <h2>Question: {question.answer}</h2>
+      <h2 style={{ color: "yellow" }}>{question.answer}</h2>
     </div>
   );
 };

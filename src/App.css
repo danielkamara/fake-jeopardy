@@ -7,6 +7,20 @@ header {
   color: white;
 }
 
+.answer {
+  display: flex;
+  justify-content: center;
+}
+
+.category {
+  display: flex;
+  justify-content: center;
+}
+
+.points {
+  display: flex;
+  justify-content: center;
+}
 .get-question {
   background-color: rgb(222, 222, 116);
   height: 40px;
@@ -28,10 +42,6 @@ header {
   background-color: rgb(11, 11, 74);
   color: white;
   font-size: 18px;
-}
-
-.score {
-  color: yellow;
 }
 
 .decrease {

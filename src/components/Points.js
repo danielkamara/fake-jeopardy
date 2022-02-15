@@ -5,7 +5,8 @@ const Points = (props) => {
   const { question } = props;
   return (
     <div className="points" key={question.id}>
-      <h2>Points: {question.value}</h2>
+      <h2 style={{ color: "yellow" }}>Points:</h2>
+      <h2 style={{ color: "white" }}>{question.value}</h2>
     </div>
   );
 };

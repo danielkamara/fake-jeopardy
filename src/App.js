@@ -43,7 +43,7 @@ class App extends Component {
     return (
       <div className="container">
         <header>
-          <h1>Welcome To Jeopardy</h1>
+          <h1>Welcome To Jeopardy!</h1>
         </header>
 
         <div>
