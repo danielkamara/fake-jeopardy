@@ -57,12 +57,19 @@ class App extends Component {
           </button>
           {this.state.question && <Category question={this.state.question} />}
           {this.state.question && <Points question={this.state.question} />}
-          {this.state.question && <Question question={this.state.question} />}
+
           {this.state.question && <Answer question={this.state.question} />}
         </div>
 
         <div>
-          {this.state.isActive ? <h1>Hello React</h1> : null}
+          {this.state.isActive ? (
+            <h2>
+              {" "}
+              {this.state.question && (
+                <Question question={this.state.question} />
+              )}{" "}
+            </h2>
+          ) : null}
           <button className="reveal" onClick={this.handleShow}>
             Click to Reveal Question
           </button>
@@ -74,5 +81,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;
