@@ -7,9 +7,17 @@ header {
   color: white;
 }
 
+h2 {
+  font-family: "Courier New", Courier, monospace;
+}
+
+h1 {
+  font-family: "Courier New", Courier, monospace;
+}
 .answer {
   display: flex;
   justify-content: center;
+  margin: 20px;
 }
 
 .category {
