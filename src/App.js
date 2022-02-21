@@ -1,11 +1,10 @@
 import "./App.css";
-import { Component } from "react";
+import { Component, useState } from "react";
 import Question from "./components/Question";
 import Category from "./components/Category";
 import Points from "./components/Points";
 import Answer from "./components/Answer";
 import Score from "./components/Score";
-import Button from "./components/Button";
 
 class App extends Component {
   state = {
@@ -23,6 +22,10 @@ class App extends Component {
     this.setState({
       isActive: false,
     });
+  };
+
+  handleIncrease = () => {
+    this.setState({});
   };
 
   getInfo = async () => {
@@ -47,9 +50,16 @@ class App extends Component {
         </header>
 
         <div>
-          {this.state.question && <Score question={this.state.question} />}
+          {this.state.question && (
+            <Score question={this.state.question} handleIncrease />
+          )}
 
-          <Button />
+          <button className="decrease">Decrease</button>
+          <button className="increase" onClick={this.handleIncrease}>
+            Increase
+          </button>
+          <button className="reset">Reset</button>
+
           <h1 style={{ color: "yellow" }}>Let's Play!</h1>
 
           <button className="get-question" onClick={this.getInfo}>
